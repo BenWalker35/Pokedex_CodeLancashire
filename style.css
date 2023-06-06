@@ -1,0 +1,292 @@
+:root {
+    --unknown: rgb(197, 191, 191);
+    --normal: rgb(215, 188, 136);
+    --fire: orange;
+    --water: lightblue;
+    --grass: green;
+    --electric: yellow;
+    --ice: rgb(156, 156, 250);
+    --fighting: #CC1616;
+    --poison: purple;
+    --ground: rgb(151, 132, 96);
+    --flying: rgb(199, 131, 143);
+    --psychic: pink;
+    --bug: lime;
+    --rock: rgb(143, 113, 113);
+    --ghost: rgb(78, 29, 78);
+    --dark: darkgrey;
+    --dragon: royalblue;
+    --steel: grey;
+    --fairy: magenta;
+    font-size: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    color: Black;
+    text-decoration: solid;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+    background-color: whitesmoke;
+    background-size: 100% 100%;
+
+}
+
+h1, h4 {
+    font-size: 5rem;
+    text-shadow: 0 0 0.25rem #FFFFFF;
+    text-align: center;
+    padding: 5rem 0 5rem;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 0px 0px;
+}
+
+li {
+    margin: 45px;
+}
+
+/* Card stylings */
+
+.card {
+    position: relative;
+    bottom: 0;
+    font-size: 1.75rem;
+    width: 250px;
+    height: 250px;
+    padding: 25px;
+    border-radius: 25px;
+    transition: bottom 50ms ease-out;
+}
+
+.card:hover {
+    bottom: 5px;
+}
+
+.card img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card .info {
+    display: flex;
+}
+
+.card .name {
+    padding-left: 25px;
+}
+
+/* Colouring the cards & pop up cards (Probably where to edit if a card has 2 types)*/
+
+[data-type1="unknown"] {
+    background-color: var(--unknown);
+}
+
+[data-type1="normal"] {
+    background-color: var(--normal);
+}
+
+[data-type1="fire"] {
+    background-color: var(--fire);
+}
+
+[data-type1="water"] {
+    background-color: var(--water);
+}
+
+[data-type1="grass"] {
+    background-color: var(--grass);
+}
+
+[data-type1="electric"] {
+    background-color: var(--electric);
+}
+
+[data-type1="ice"] {
+    background-color: var(--ice);
+}
+
+[data-type1="fighting"] {
+    background-color: var(--fighting);
+}
+
+[data-type1="poison"] {
+    background-color: var(--poison);
+}
+
+[data-type1="ground"] {
+    background-color: var(--ground);
+}
+
+[data-type1="flying"] {
+    background-color: var(--flying);
+}
+
+[data-type1="psychic"] {
+    background-color: var(--psychic);
+}
+
+[data-type1="bug"] {
+    background-color: var(--bug);
+}
+
+[data-type1="rock"] {
+    background-color: var(--rock);
+}
+
+[data-type1="ghost"] {
+    background-color: var(--ghost);
+}
+
+[data-type1="dark"] {
+    background-color: var(--dark);
+}
+
+[data-type1="dragon"] {
+    background-color: var(--dragon);
+}
+
+[data-type1="steel"] {
+    background-color: var(--steel);
+}
+
+[data-type1="fairy"] {
+    background-color: var(--fairy);
+}
+
+.entry {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 500px;
+    border-radius: 25px;
+}
+
+.slide-up {
+    animation: slide-up 0ms ease-out forwards;
+}
+
+.slide-down {
+    animation: slide-down 0ms ease-in forwards;
+}
+
+.entry :is(.id, .name) {
+    font-size: 2rem;
+}
+
+.entry .id {
+    display: block;
+    text-align: end;
+    margin: 25px 25px calc(2rem / 3);
+}
+
+.entry .id::before {
+    content: '#';
+}
+
+.entry .main {
+    display: flex;
+    margin: 0 25px 50px;
+}
+
+.entry img {
+    image-rendering: pixelated;
+    width: 250px;
+    height: 250px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.entry .name {
+    margin-top: calc(2rem / 2);
+}
+
+.entry :is(.name, .species) {
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.entry :is(.species, .types) {
+    font-size: 20px;
+}
+
+.entry .type {
+    width: 5px;
+    text-align: center;
+    overflow: hidden;
+    padding: 2.5px;
+    border: 5px solid whitesmoke;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c3bbbbbf;
+}
+
+.fade-in {
+    animation: fade-in 500ms ease-out forwards;
+}
+
+.fade-out {
+    animation: fade-out 500ms ease-out forwards;
+}
+
+@keyframes slide-up {
+
+    100% {
+        position: fixed;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@keyframes slide-down {
+
+    100% {
+        position: fixed;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+    }
+}
+
+
+/* After Card goes, the fadeout is for the screen to go back to clear */
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}

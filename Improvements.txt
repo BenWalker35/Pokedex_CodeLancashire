@@ -1,0 +1,7 @@
+Noticed Bugs / Improvements for a later date
+
+1. Takes a while to load - scrolling takes time
+2. If a pokemon has a 'type2' (and the card is clicked more than once), it adds the boxes. ... has no limit but resets after refresh
+3. Styling wise - cards are taking the type1 colour - could advance to take 2? Include a box of the different colours like Adi's?
+4. After a card pop-ups, if you scroll, it makes it harder to click off the card? Some sort of delay
+5. Not very responsive when at the bottom of page
